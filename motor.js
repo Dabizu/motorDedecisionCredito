@@ -53,8 +53,10 @@ array[
     {tipoNomina:D,fechaPrimeroEmpleo:'15-01-2019',genero:"f",monto:700}
 ]
 function calculoMotor(tipoNomina="",fechaPrimeroEmpleo='19-06-2024', genero=""){
-    var montoMinimo=
-    var montoMaximo=Math.sqrt(montoMaximo);
-    var p1=montoMinimo+montoMaximo
-    return {montoMinimo, montoMáximo, recomendacionLinea};
+    var montoMinimo=Math.min(array.monto);
+    var montoMaximo=Math.max(array.monto);
+    var p1=montoMinimo+Math.sqrt(montoMaximo-montoMinimo);
+    var p2=montoMinimo+0.0175*(montoMaximo-montoMinimo);
+    recomendacionLinea=Math.max(p1,p2);
+    return {montoMinimo, montoMaximo, recomendacionLinea};
 }
